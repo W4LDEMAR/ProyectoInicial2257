@@ -64,6 +64,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +77,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jTextField2.setText("jTextField2");
 
-        jTextField3.setText("jTextField2");
+        jTextField3.setText("jTextField3");
 
         jLabel2.setText("Edad:");
 
@@ -311,12 +312,15 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jButton4.setText("<<");
 
-        jButton5.setText("Registro");
+        jButton5.setText("Nuevo Registro");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
             }
         });
+
+        jButton6.setText("Envia");
+        jButton6.setEnabled(false);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -326,6 +330,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton5)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton6)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jButton4)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -346,7 +352,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
                     .add(jButton2)
                     .add(jButton3)
                     .add(jButton4)
-                    .add(jButton5))
+                    .add(jButton5)
+                    .add(jButton6))
                 .add(0, 9, Short.MAX_VALUE))
         );
 
@@ -364,11 +371,21 @@ public class AltaEmpleado extends javax.swing.JFrame {
         
         Empleado emp = new Empleado();
         emp.setNombre(this.jTextField1.getText());
-        emp.SetApPaterno(this.jTextField2.getText());
-        emp.serApMaterno(this.jTextField3.getText());
+        emp.setApPaterno(this.jTextField2.getText());
+        emp.setApMaterno(this.jTextField3.getText());
         emp.setEdad(Integer.parseInt(jTextField4.getText()));
         emp.setCurp(jTextField5.getText());
-        emp.setDomicilio().serCalle(this.jTextField6.getText());
+        emp.setDomicilio(new Direccion());
+        emp.get.Domicilio().setCalle(this.jTextField6.getText());
+        emp.get.Domicilio().setNumero(this.jTextField7.getText());
+        emp.get.Domicilio().setColonia(this.jTextField8.getText());
+        emp.get.Domicilio().setDelegacion(this.jTextField9.getText());
+        emp.get.Domicilio().setEstado(this.jTextField10.getText());
+        emp.setNumeroEmpleado(Integer.parseInt(this.jTextField11.getText()));
+        emp.setDepartamento(this.jTextField12.getText());
+        emp.setSueldo(Float.parseFloat(this.jTextField13.getText()));
+        emp.setHorasExtra(Integer.parseInt(this.jTextField14.getText()));
+       int confirmar = JOptionPane.showConfirmDialog(this, "¿Deseas guardar estos daatos?");
     }//GEN-LAST:event_jButton5MouseClicked
     
     private void limpiarFormulario(){
@@ -429,6 +446,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
